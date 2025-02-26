@@ -1,0 +1,191 @@
+*{  /*Reset de estilo padrão: Basicamento o navegador vem com estilo padrão que pode atrapalhar o desing   */
+    
+    /* Asteristico significa a seleção geral dos elementos da página*/
+    margin: 0; /*  Margin 0  e padding 0 removem margens e espaçamentos padrões do navegador.*/
+    padding: 0;
+    box-sizing: border-box;/*Faz com que a largura e  altura incluam bordas e padding, evitando bugs. */
+    font-family: Arial, sans-serif;/* Define fonte principal do site */
+}
+:root {
+--cor-principa: #f4c2c2;/* Rosa suave */
+--cor-secundaria: #a8d5ba; /* Verde suave */
+--cor-texto: #333; /* Cor escura para o texto */
+--cor-fundo: #fefefe;/* Fundo branco */
+
+}
+
+body {
+        background: linear-gradient(to right bottom #ff7e5f, #feb47b);  /*Define o fundo escuro do site */
+        color: var(--cor-texto);
+        text-align: center;           /*Centraliza o texto por padrão */
+        padding: 0;                /*Adiciona um pequeno espaço dentro da página */
+        margin: 0;
+        background-color: var(--cor-fundo);
+        font-family: 'Roboto',sans-serif;
+        background-image:url('imagens/arvore2.webp'); /*Adiciona uma imagem ao fundo do códiogo */
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: darken;
+        animation: gradientShift 5s infinite alternate;
+
+
+
+    /* Aqui estamos definidno o estilo base do meu site, escolhendo cores e organização*/
+}
+
+
+header {
+    display: flex;  /*Ativa um tal de flexbox que ajuda  a organizar os elementos lado a lado. */
+    justify-content: space-between;  /*Separa os itens do cabeçalho deixando o nome á esqueda e o menu a direita */
+    align-items: center; /*Centraliza os itens verticalmente */
+    background-color: #412944; /*Cor escura pique orienta hehe*/  /*Cor de fundo do CABEÇALHO. */
+    color:  white;  /*Define cor do texto  */
+    padding: 10px 0;  /*Adiciona espaço interno para melhorar a aparencia */
+ 
+   
+}
+header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 55px; /*Define um tamanho maior para o título */
+    color: #ffffff; /*Muda cor para verde */
+    letter-spacing: 3px;
+    
+}
+nav ul{
+    list-style: none;/*Remove os pontinhos da lista */
+    display: flex; /*Organiza os itens lado a lado */
+}
+nav ul li{
+    margin: 0 15px; /*Adiciona espaço entre os links */
+}
+nav ul li a {
+    text-decoration: none; /*Remove o sublinhado dos links */
+    color: #ffffff; /*Define a cor para os links  */
+    font-size: 18px ;/*Define o tamanho do texto */
+    transition: 0.3s;/*Faz o efeito de hover ficar suave */
+}
+nav ul li a:hover{
+    color: #ff0000; /*Muda a cor do link quando o mouse passa em cima. */
+}
+section {
+    padding: 50px;
+    opacity: 0; /*Inicialmente , a seção fica invisível.*/
+    transform:  translateX(50px); /*Seção começa com um pequeno deslocamento*/
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /*Define animação*/
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible{
+    opacity: 1; /*Quando a seção se torna visivel*/
+    transform: translateY(0); /*A seção volta a posição original.*/
+}
+section:hover{
+    background-color: var(--cor-principa); /*Aqui foi maneiro hein, adiciona um efeito ao passar pelas seçoes de
+    mudança de cor.*/
+}
+footer{
+    background-color: #412944;
+    margin-top: 190px; /*Espaçamento e cor do rodape */
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+a:hover{
+    color: #e91e63; /* cor de hover no link */
+    text-decoration: none;
+}
+a {
+    color: #f54dd0; /*Cor suave de destaque*/
+    text-decoration: none;
+}
+
+h1,h2,h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cor-principal);
+}
+
+.linkedin-icon,.instagram-icon,.github-icon { /*Aqui é aonde eu padronizo os meus icones como altura, largura, formato, etc...*/
+    display: inline-flex; /* deixa o icone alinhado corretamente */
+    align-items: center; /* Centraliza ele verticalmente*/
+    justify-content: center; /*Centraliza horizantalmente*/
+    width: 40px;/*Tamanho do botão*/
+    height: 40px; /*AINDA NÃO SEI OQUE FAZ DIREITO ACREIDOT QUE SEJA A ALTURA DO BOTÃO.*/
+    background-color: #0077b5;/*cor do linkedIn*/
+    border-radius: 50%;/*Deixa o botão redondo*/
+    text-decoration: none ;/*Remove o sublinhado do link*/
+    transition: background-color 0.3s ease-in-out;/*Animaçãozinha*/ 
+}
+/*LINKEDIN CUSTOM*/
+.linkedin-icon i{
+    color: white !important; /*Cor do iconeee*/
+    font-size: 24px;/*Tamanho do icone*/
+    transition: transform 0.3s ease-in-out; /* Faz o efeito de crescimento suave */
+}
+.linkedin-icon:hover {
+    background-color: #005582 ;  /*Hover pelo oque entendi é o efeito de passar o mouse por cima e mudar a cor do icone*/
+}
+.linkedin-icon:hover i {
+    transform: scale(1.2);/*Faz o icone crescer ao passar o mouse em cima "ABSOLUTE CINEMA" */
+}
+/*GITHUB CUSTOM*/
+.github-icon{
+    background-color: #333; /*Define a cor de fundo do botão do github*/
+}
+
+.github-icon i {
+    color: white ;
+    font-size: 24px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.github-icon:hover{
+    background-color: #222;
+}
+
+.github-icon:hover i {
+    transform: scale(1.2);
+}
+/*INSTA CUSTOM*/
+.instagram-icon{
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);  /*Aquui o chatgpt salvou de mais digitar isso é chato*/
+}
+.instagram-icon i{
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+.instagram-icon:hover{
+    opacity: 0.8; /* Diminui a opacidade ao passar o mouse, criando um efeito de suavidade */
+}
+.instagram-icon:hover i {
+    transform: scale(1.2);
+} 
+/*Email CUSTOM*/
+.gmail-icon{
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 40px;
+    height: 40px; 
+    background-color: #d93025; 
+    border-radius: 50%; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease-in-out; 
+}
+.gmail-icon i{
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gmail-icon:hover{
+    background-color: #c1351d; 
+}
+.gmail-icon:hover i{
+    transform: scale(1.2);
+}
